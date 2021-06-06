@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        let a = "http://www.nowcoder.com?key=1&key=2&key=3&test=4#hehe";
+        let b = "key";
+      function getUrlParam(sUrl, sKey) {
+        let a = sUrl;
+        a = a.split("#");
+        let aa = a[0].toString()
+        console.log(typeof aa);
+        let b = aa.split('?');
+        let c = b[1].split('&');
+        c = c.join("=")
+        c = c.split('=')
+        var keyl = [];
+        for(let i = 0 ; i<c.length;i++){
+            if(c[i] == sKey){
+                keyl.push(c[i+1])
+            }
+        }
+        return keyl
+      }
+      console.log(getUrlParam(a,b)); 
+    </script>
+  </body>
+</html>

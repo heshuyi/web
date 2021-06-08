@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function duplicates(arr) {
+        let a = arr;
+        a.sort((c, d) => {
+          return c - d;
+        });
+        console.log(a);
+        var flag = null;
+        var out = [];
+        for (let cc = 0; cc < a.length; cc++) {
+            if(a[cc] == flag){
+                if(a[cc]!=out[out.length-1]){
+                    out.push(a[cc])
+                }
+            }
+            flag = a[cc]
+        }
+        return out;
+      }
+      console.log(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]));
+    </script>
+  </body>
+</html>

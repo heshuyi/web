@@ -14,20 +14,44 @@
         let a = sUrl;
         a = a.split("#");
         let aa = a[0].toString()
-        console.log(typeof aa);
+        // console.log(typeof aa);
         let b = aa.split('?');
         let c = b[1].split('&');
         c = c.join("=")
         c = c.split('=')
+        console.log(c);
         var keyl = [];
-        for(let i = 0 ; i<c.length;i++){
-            if(c[i] == sKey){
-                keyl.push(c[i+1])
+        if(!sKey){
+          for(let i = 0 ; i<c.length;i++){
+            if(i%2==1){
+                keyl.push(c[i])
             }
+
+            
         }
-        return keyl
+        return keyl;
+        }
+        else{
+          for(let i = 0 ; i<c.length;i++){
+            if(c[i]==sKey){
+                keyl.push(c[i+1] )
+            }}
+        if(keyl.length>1)
+        {
+          return keyl;
+        }
+        if(keyl.length==1){
+          return keyl[0];
+        }
+        if(keyl.length==0){
+          return "";
+        }
+        }
+        
+
+        
       }
-      console.log(getUrlParam(a,b)); 
+      console.log(getUrlParam(a)); 
     </script>
   </body>
 </html>
